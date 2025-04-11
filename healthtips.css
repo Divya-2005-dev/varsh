@@ -1,0 +1,50 @@
+body.tips-page {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: auto;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid red;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  }
+  
+  h2 {
+    color: #ff4444;
+    margin-bottom: 20px;
+  }
+  
+  .tips-list {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .tips-list li {
+    margin: 15px 0;
+  }
+  
+  .home-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: crimson;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .home-btn:hover {
+    background-color: darkred;
+  }
+  

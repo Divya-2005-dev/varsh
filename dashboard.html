@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>🩺 Health Dashboard</h1>
+
+    <div class="button-group">
+      <button onclick="showSection('health')">Health Tracker</button>
+      <button onclick="showSection('diet')">Diet</button>
+      <button onclick="showSection('nutrients')">Nutrient Planner</button>
+      <button onclick="showSection('fitness')">Fitness & Exercise</button>
+      <button onclick="showSection('mood')">Mood & Stress Tracker</button>
+    </div>
+
+    <div id="content">
+      <div id="health" class="section">
+        <h2>Health Tracking Information</h2>
+        <p>Track your daily blood pressure, and heart rate to stay informed about your well-being.</p>
+      </div>
+
+      <div id="diet" class="section hidden">
+        <h2>Diet Details</h2>
+        <p>Eat more fruits, veggies, whole grains, and drink enough water. Avoid junk and sugary foods.</p>
+      </div>
+
+      <div id="nutrients" class="section hidden">
+        <h2>Nutrient Planner</h2>
+        <p>Ensure intake of proteins, vitamins, minerals, and carbs in the right proportions daily.</p>
+      </div>
+
+      <div id="fitness" class="section hidden">
+        <h2>Fitness & Exercise</h2>
+        <p>Do regular workouts, stretching, walking, yoga or any form of physical activity daily for 30 minutes.</p>
+      </div>
+
+      <div id="mood" class="section hidden">
+        <h2>Mood & Stress Tracker</h2>
+        <p>Track your mood, meditate, practice mindfulness, and take breaks to reduce stress levels.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+  <a href="slide6.html" class="monitor-btn">🧑‍⚕️ Health Assistant</a>
+  <a href="pupil.html" class="monitor-btn">👁️ Monitor Pupil via Webcam</a>
+
+
+</body>
+</html>

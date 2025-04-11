@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor Health</title>
+  <style>
+    body.monitor-page {
+      background: linear-gradient(to right, #000000, #8B0000);
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #FF5252;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 60%;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .results {
+      background-color: #1a1a1a;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px red;
+    }
+
+    .next-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #FF5252;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="monitor-page">
+  <div class="container">
+    <h1>🩺  Your Health Details</h1>
+
+    <label>Blood Pressure (e.g. 120/80):</label>
+    <input type="text" id="bpInput"><br><br>
+
+    <label>Heart Rate (BPM):</label>
+    <input type="number" id="bpmInput"><br><br>
+
+    <div class="results" id="results">
+      <h2>🧾 Your Current Report...!</h2>
+      
+    </div>
+
+    <a href="healthtips.html" class="next-btn">➡ View Health Tips</a>
+  </div>
+
+  <script>
+    // Voice welcome when page loads
+    window.onload = function () {
+      speak("your health details is received");
+    };
+
+    // Update and speak based on blood pressure input
+    document.getElementById("bpInput").addEventListener("input", function () {
+      const bp = this.value.trim();
+      document.getElementById("bpDisplay").innerText = bp;
+
+      const bpParts = bp.split("/");
+      if (bpParts.length === 2) {
+        const systolic = parseInt(bpParts[0]);
+        const diastolic = parseInt(bpParts[1]);
+
+        if (!isNaN(systolic) && !isNaN(diastolic)) {
+          if (systolic < 130 && diastolic < 80) {
+            speak("Your blood pressure is normal. Keep it up!");
+          } else if (systolic >= 130 && systolic <= 180) {
+            speak("Your blood pressure is elevated. Please monitor closely.");
+          } else if (systolic > 180) {
+            speak("Warning! Your blood pressure is very high. Take immediate action.");
+          }
+        }
+      }
+    });
+
+    // Update display for heart rate
+    document.getElementById("bpmInput").addEventListener("input", function () {
+      const bpm = this.value;
+      document.getElementById("bpmDisplay").innerText = bpm + " BPM";
+      if (bpm >= 100) {
+        speak("Your heart rate is high. Please try to relax.");
+      } else if (bpm <= 60) {
+        speak("Your heart rate is low. Monitor and rest if needed.");
+      }
+    });
+
+    // Voice function
+    function speak(text) {
+      const msg = new SpeechSynthesisUtterance(text);
+      msg.lang = 'en-US';
+      msg.rate = 1;
+      window.speechSynthesis.speak(msg);
+    }
+  </script>
+</body>
+</html>

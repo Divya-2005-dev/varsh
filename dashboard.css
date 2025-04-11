@@ -1,0 +1,48 @@
+body {
+    background-color: #0d0d0d;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  h1 {
+    color: red;
+  }
+  
+  .button-group {
+    margin: 20px 0;
+  }
+  
+  .button-group button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .section {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #1a1a1a;
+    display: none; /* Hidden by default */
+  }
+  
+  .section h2 {
+    color: #00ffcc;
+  }
+  
+  .section p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .section.active {
+    display: block; /* Show only active one */
+  }
+  

@@ -1,0 +1,46 @@
+body.monitor-page {
+    background: linear-gradient(to right, #000000, #8B0000);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  h1 {
+    margin-bottom: 40px;
+    color: #FF5252;
+  }
+  
+  .health-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .box {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px red;
+  }
+  
+  .box h2 {
+    color: #FF1744;
+    margin-bottom: 10px;
+  }
+  
+  .next-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: #FF5252;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  

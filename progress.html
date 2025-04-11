@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Health Progress Tracker</title>
+  <link rel="stylesheet" href="progress.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📈 Patient Health Progress Tracker</h1>
+
+    <!-- Section 1: Upload or Enter Beginning Report -->
+    <section>
+      <h2>📤 Beginning Health Report</h2>
+      <form id="beginning-form">
+        <label>Blood Pressure: <input type="text" id="beginning-bp" placeholder="e.g. 150/100"></label><br>
+        <label>Sugar Level: <input type="text" id="beginning-sugar" placeholder="e.g. 180 mg/dL"></label><br>
+        <label>Heart Rate: <input type="text" id="beginning-heart" placeholder="e.g. 95 bpm"></label><br>
+      </form>
+    </section>
+
+    <!-- Section 2: Current Health Report -->
+    <section>
+      <h2>📊 Current Health Report</h2>
+      <form id="current-form">
+        <label>Blood Pressure: <input type="text" id="current-bp" placeholder="e.g. 120/80"></label><br>
+        <label>Sugar Level: <input type="text" id="current-sugar" placeholder="e.g. 120 mg/dL"></label><br>
+        <label>Heart Rate: <input type="text" id="current-heart" placeholder="e.g. 75 bpm"></label><br>
+      </form>
+    </section>
+
+    <!-- Section 3: Comparison Table -->
+    <section>
+      <h2>🔁 Health Comparison</h2>
+      <button onclick="compareReports()">Compare Reports</button>
+      <table id="comparison-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Beginning</th>
+            <th>Current</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Section 4: Actions -->
+    <section class="actions">
+      <button onclick="window.print()">🖨️ Download/Print Summary</button>
+      <a href="dashboard.html"><button>🔙 Back to Dashboard</button></a>
+    </section>
+  </div>
+
+  <script src="progress.js"></script>
+</body>
+</html>

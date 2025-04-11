@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Tips</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #000000, #8B0000);
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #FF5252;
+    }
+
+    .tip-box {
+      background-color: #1a1a1a;
+      border-left: 6px solid #ff5252;
+      padding: 20px;
+      margin: 30px auto;
+      border-radius: 10px;
+      color: #fff;
+      box-shadow: 0 0 10px #ff5252;
+      max-width: 700px;
+    }
+
+    .next-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #FF5252;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🩺 Health Tips & Recommendations</h1>
+
+  <!-- Tip of the Day Section -->
+  <div id="daily-tip" class="tip-box">
+    <h2>📝 Tip of the Day</h2>
+    <p id="tipText">Loading your tip...</p>
+  </div>
+
+  <a href="dashboard.html" class="next-btn">⬅ Back to Dashboard</a>
+
+  <script>
+    window.onload = function () {
+      const tips = [
+        "Drink 2-3 liters of water daily to stay hydrated.",
+        "Walk for 30 minutes to maintain a healthy heart.",
+        "Reduce salt and sugar intake to control BP and sugar.",
+        "Sleep 7-8 hours to allow your body to recover.",
+        "Practice deep breathing to reduce stress.",
+        "Eat more fruits and avoid junk food.",
+        "Laughter helps lower blood pressure!",
+        "Take short breaks between work to relax your mind.",
+        "Never skip regular checkups — prevention is better than cure."
+      ];
+
+      const randomTip = tips[Math.floor(Math.random() * tips.length)];
+      const tipTextElement = document.getElementById("tipText");
+      tipTextElement.innerText = randomTip;
+
+      // Voice assist
+      const speak = new SpeechSynthesisUtterance(randomTip);
+      speak.lang = 'en-US';
+      speak.rate = 1;
+      window.speechSynthesis.speak(speak);
+    };
+  </script>
+</body>
+</html>

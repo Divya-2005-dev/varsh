@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Assistant Panel</title>
+  <link rel="stylesheet" href="slide6.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>💡 Health Assistant Services</h1>
+
+    <!-- Appointment Card -->
+    <div class="card">
+      <h2>📅 Book Appointment</h2>
+      <form id="appointmentForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="date" required>
+        <input type="time" required>
+        <textarea placeholder="Describe your health concern..." required></textarea>
+        <button type="submit">Confirm</button>
+      </form>
+      <p id="appointmentMsg"></p>
+    </div>
+
+    <!-- Feedback Card -->
+    <div class="card">
+      <h2>📝 Feedback & Suggestions</h2>
+      <form id="feedbackForm">
+        <select required>
+          <option disabled selected>Rate Us</option>
+          <option>⭐</option>
+          <option>⭐⭐</option>
+          <option>⭐⭐⭐</option>
+          <option>⭐⭐⭐⭐</option>
+          <option>⭐⭐⭐⭐⭐</option>
+        </select>
+        <textarea placeholder="Your suggestions..." required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <p id="feedbackMsg"></p>
+    </div>
+
+    <!-- Emergency Card -->
+    <div class="card emergency-card">
+      <h2>🚨 Emergency & First Aid</h2>
+      <ul>
+        <li><strong>Ambulance:</strong> 108</li>
+        <li><strong>Police:</strong> 100</li>
+        <li><strong>Fire:</strong> 101</li>
+        <li><strong>Hospital:</strong> <a href="https://maps.google.com" target="_blank">Locate on Map</a></li>
+      </ul>
+      <p>💊 <strong>Tip:</strong> For fainting, lay flat and elevate legs. For bleeding, apply pressure with a clean cloth.</p>
+    </div>
+
+    <a class="back-btn" href="dashboard.html">⬅ Back to Dashboard</a>
+  </div>
+
+  <script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('appointmentMsg').innerText = "✅ Appointment booked successfully!";
+    });
+
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('feedbackMsg').innerText = "🎉 Thanks for your feedback!";
+    });
+  </script>
+</body>
+</html>
